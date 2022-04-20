@@ -2,28 +2,42 @@
 * {
   box-sizing: border-box;
 }
-
+/* General styles */
 html {
-  font-size: 10px; /* for easy calculation */
+  font-size: 10px; /* for easy calculation of rems */
+}
+body {
+  color: #4d4e53;
+  line-height: 1.5;
   font-family: "Open Sans", sans-serif;
 }
-
-/* Fonts */
-/* header,
-section {
-} */
+li {
+  list-style: disc;
+}
+/* Font sizing */
 header {
+  color: #000000;
   font-size: 2.9rem;
+}
+li,
+p,
+ul {
+  font-size: 1.536rem;
 }
 code {
   font-family: monospace;
+  font-size: 1.248rem;
 }
 /* Nav-bar styling */
-#navbar {
-  height: 100vh;
-  position: fixed;
-  max-width: max-content;
-  border-right: 2px solid #99a2a2;
+#navbar header {
+  margin: 1rem 0 1.536rem 20px;
+}
+#navbar ul {
+  overflow: auto;
+  max-height: 23vh;
+  border-left: none;
+  border-right: none;
+  border: 2px solid #4d4e53;
 }
 #navbar a {
   text-decoration: none;
@@ -31,34 +45,59 @@ code {
   font-size: 1.6rem;
   padding: 10px 30px;
   display: block;
-  line-height: 1.5;
 }
-/* #navbar ul {
-  border-left: none;
-  border-right: none;
-} */
 #navbar li {
-  /* padding: 10px 30px; */
   border-top: 1px solid #4d4e53;
-  /* border-bottom: solid 1px black; */
 }
-p {
+/* Article styling */
+#main-doc {
+  padding: 0 20px;
+}
+article {
+  margin: 1.536rem;
+}
+#Introduction header {
+  margin-top: 1.536rem;
+}
+.main-section ul {
+  margin: 0 0 0 30px;
+}
+.main-section li,
+.main-section p,
+.main-section ul {
+  font-size: 1.536rem;
   margin-top: 1.536rem;
   margin-bottom: 1.536rem;
-  font-size: 1.536rem;
 }
-@media screen and (max-width: 815px) {
+code {
+  display: block;
+  border-radius: 5px;
+  margin: 2rem;
+  padding: 2rem 1.3rem;
+  background-color: #f6f6f6;
+}
+@media screen and (min-width: 816px) {
+  /* for big screens */
   #navbar {
-    position: relative;
+    height: 100vh;
+    position: fixed;
+    max-width: max-content;
+    border-right: 2px solid #99a2a2;
+  }
+  #navbar a {
+    text-decoration: none;
+    color: #4d4e79;
+    font-size: 1.6rem;
+    padding: 10px 30px;
+    display: block;
+    line-height: 1.5;
   }
   #navbar ul {
-    max-height: 275px;
-    overflow: auto;
-    z-index: 1;
+    border: none;
+    min-height: 100vh;
   }
-}
-/* Main body */
-article {
-  position: absolute;
-  margin-left: 300px;
+  #main-doc {
+    position: absolute;
+    margin-left: 300px;
+  }
 }
